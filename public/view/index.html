@@ -28,11 +28,20 @@
           for synchronization.</p>
       </div>
 
-      <button id="reloadSyncablesBtn"
-        class="disabled:bg-gray-700 disabled:cursor-not-allowed cursor-pointer pr-5 pl-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-blue-500/20 flex items-center">
-        <span class="material-symbols-outlined mr-1" style="font-size: 18px;">autorenew</span>
-        Refresh
-      </button>
+      <div class="gap-2 flex">
+        <button id="dlppage"
+          class="disabled:bg-gray-700 disabled:cursor-not-allowed cursor-pointer pr-5 pl-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-blue-500/20 flex items-center">
+          <span class="material-symbols-outlined mr-1" style="font-size: 18px;">autorenew</span>
+          Dynamic Load Planning
+        </button>
+
+        <button id="reloadSyncablesBtn"
+          class="disabled:bg-gray-700 disabled:cursor-not-allowed cursor-pointer pr-5 pl-3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-blue-500/20 flex items-center">
+          <span class="material-symbols-outlined mr-1" style="font-size: 18px;">autorenew</span>
+          Refresh
+        </button>
+      </div>
+
 
       <div
         class="hidden flex items-center gap-2 bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full border border-green-100 dark:border-green-900/30">
@@ -915,6 +924,11 @@
                   <span
                     class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-4  00 transition-opacity">unfold_more</span>
                 </div>
+              </th>              
+              <th id="action-col" class="hidden px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                data-column="action">
+                <div class="flex items-center gap-1">
+                  Action                 
               </th>
               <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
                 data-column="api_response">

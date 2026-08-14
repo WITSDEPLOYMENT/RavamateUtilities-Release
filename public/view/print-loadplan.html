@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./ravamate.jpg" type="image/png">
+
+    <link href="css/output.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+
+    <link href="/vendor/material-symbols/index.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./ravamate.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css" />
+    <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <title>Print Load Plan</title>
+
+    <style>
+        /* Small print optimization to ensure backgrounds and lines render properly */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            table * {
+                font-size: 9.9px !important;
+                padding: 5px !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans antialiased print:bg-white">
+
+    <!-- Main Document Container -->
+    <div
+        class="max-w-6xl mx-auto bg-white p-8 my-8 shadow-lg border border-gray-200 print:shadow-none print:border-none print:m-0 print:p-0 print:max-w-full">
+
+        <!-- Top Action Bar (Hidden on Print) -->
+        <div class="flex justify-end mb-4 print:hidden">
+            <button onclick="window.print()"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded shadow transition duration-200 flex items-center gap-2">
+                <i class="fas fa-print"></i> PRINT
+            </button>
+        </div>
+
+        <!-- Document Header -->
+        <div class="grid grid-cols-3 items-center print:pb-2">
+            <!-- Left -->
+            <div>
+                <img class="h-16 w-auto object-contain" src="./ravamate.jpg" alt="Logo">
+            </div>
+
+            <!-- Center -->
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-800 uppercase tracking-tight">
+                    Load Plan
+                </h1>
+            </div>
+
+            <!-- Right -->
+            <div class="text-right text-sm text-gray-600 flex flex-col gap-1 print:text-xs">
+                <p>SITE: <strong id="siteHolder" class="text-gray-900 font-bold uppercase">PD8 SANDBOX</strong></p>
+                <p>UNLOADING DATE: <strong id="loadingdateholder" class="text-gray-900 font-bold">08/07/2026</strong>
+                </p>
+                <p>PLATE #: <strong id="platenoholder" class="text-gray-900 font-bold uppercase">DRP6 DRP6 - REY
+                        TRUJELLO</strong></p>
+            </div>
+        </div>
+
+        <!-- Table Data -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border border-gray-300 print:border-gray-400 print:text-[9px]">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 border-t-2 border-b-2
+                     border-gray-800 print:bg-transparent print:border-gray-500 print:text-[10px]">
+                    <tr>
+                        <th colspan="4" class="border px-3 py-2 text-center border-gray-300 print:border-gray-400">
+                            Destination</th>
+                        <th colspan="5" class="border px-3 py-2 text-center border-gray-300 print:border-gray-400">
+                            Reference</th>
+                    </tr>
+                    <tr class="border-b border-gray-300 print:border-gray-400">
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center">#</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400">Customer Name</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center">Contact</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400">Address</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center">No.</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center">Booking Date
+                        </th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center">Lapse</th>
+                        <th class="px-2 py-2 border-r border-gray-300 print:border-gray-400 text-center"># SKU</th>
+                        <th class="px-2 py-2 text-right">Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bodymain"
+                    class="divide-y divide-gray-200 border-b border-gray-300 print:divide-gray-400 print:border-gray-400">
+                    <!-- Dynamic Javascript Content -->
+                </tbody>
+
+                <tfoot class="bg-gray-50 border-b-2 border-gray-800 print:bg-transparent print:border-gray-500">
+                    <tr>
+                        <td colspan="8"
+                            class="px-3 py-3 text-right font-bold text-gray-900 uppercase border-r border-gray-200 print:border-gray-400">
+                            Total Amount:
+                        </td>
+                        <td class="px-3 py-3 text-right font-bold text-gray-900 print:text-sm">
+                            <strong id="totalAmountHolder"></strong>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Footer Signatures -->
+        <div class="mt-16 grid grid-cols-3 gap-12 text-center text-sm print:mt-12 print:text-xs">
+            <div>
+                <input type="text" type="text"
+                    class="w-full text-center border-0 border-b-2 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent print:border-gray-600 print:p-0">
+
+                <p class="mt-2 text-gray-600 uppercase text-xs font-semibold">Prepared By</p>
+            </div>
+            <div>
+                <input type="text"
+                    class="w-full text-center border-0 border-b-2 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent print:border-gray-600 print:p-0">
+                <p class="mt-2 text-gray-600 uppercase text-xs font-semibold">Noted By</p>
+            </div>
+            <div>
+                <input type="text"
+                    class="w-full text-center border-0 border-b-2 focus:outline-none focus:ring-0 focus:border-blue-500 bg-transparent print:border-gray-600 print:p-0">
+                <p class="mt-2 text-gray-600 uppercase text-xs font-semibold">Approved By</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/vendor/tippy-core/dist/umd/popper.min.js"></script>
+    <script src="/vendor/tippy/dist/tippy-bundle.umd.min.js"></script>
+
+    <script type="module" src="/js/dynamic-load-planning/loadplan.js"></script>
+    </script>
+
+</html>
