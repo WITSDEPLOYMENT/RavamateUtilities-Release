@@ -140,3 +140,4 @@ vite.config.ts.timestamp-*
 
 # Release build for the project
 release/
+index.js.source.js
