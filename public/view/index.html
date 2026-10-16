@@ -599,9 +599,17 @@
                 </div>
               </th>
               <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
-                data-column="lastUpdated">
+                data-column="dateInserted">
                 <div class="flex items-center gap-1 justify-between">
                   Date Added
+                  <span
+                    class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity">unfold_more</span>
+                </div>
+              </th>
+              <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                data-column="lastUpdated">
+                <div class="flex items-center gap-1 justify-between">
+                  Last Updated
                   <span
                     class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity">unfold_more</span>
                 </div>
@@ -620,7 +628,7 @@
           <tbody id="salesOrderTable"
             class="text-xs divide-y divide-slate-100 dark:divide-slate-800/50 cursor-pointer text-slate-500 dark:text-slate-400">
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group">
-              <td colspan="9" class="px-4 py-8 text-center font-semibold text-slate-700 dark:text-slate-200">
+              <td colspan="10" class="px-4 py-8 text-center font-semibold text-slate-700 dark:text-slate-200">
 
                 <div class="flex items-center justify-center gap-2 w-full">
                   <svg class="size-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -700,9 +708,17 @@
                 </div>
               </th>
               <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
-                data-column="lastUpdated">
+                data-column="dateInserted">
                 <div class="flex items-center gap-1">
                   Date Added
+                  <span
+                    class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity">unfold_more</span>
+                </div>
+              </th>
+              <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                data-column="lastUpdated">
+                <div class="flex items-center gap-1">
+                  Last Updated
                   <span
                     class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity">unfold_more</span>
                 </div>
@@ -829,6 +845,14 @@
                 </div>
               </th>
               <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                data-column="lastUpdate">
+                <div class="flex items-center gap-1">
+                  Last Updated
+                  <span
+                    class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-400 transition-opacity">unfold_more</span>
+              </div>
+              </th>
+              <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
                 data-column="api_response">
                 <div class="flex items-center gap-1">
                   Api Response
@@ -924,11 +948,20 @@
                   <span
                     class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-4  00 transition-opacity">unfold_more</span>
                 </div>
-              </th>              
-              <th id="action-col" class="hidden px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+              </th>
+              <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                data-column="lastUpdated">
+                <div class="flex items-center gap-1">
+                  Last Updated
+                  <span
+                    class="sort-icon material-symbols-outlined !text-[14px] opacity-0 group-hover:opacity-100 text-slate-4  00 transition-opacity">unfold_more</span>
+                </div>
+              </th>
+              <th id="action-col"
+                class="hidden px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
                 data-column="action">
                 <div class="flex items-center gap-1">
-                  Action                 
+                  Action
               </th>
               <th class="px-4 py-2.5 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
                 data-column="api_response">
