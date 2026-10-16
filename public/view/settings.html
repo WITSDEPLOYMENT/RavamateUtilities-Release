@@ -281,34 +281,77 @@
                     <div
                         class="p-3 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-primary text-[18px]">data_object</span>
-                        <h4 class="font-semibold text-gray-900 dark:text-white text-xs">ERIC Auth in JSON Format</h4>
+                        <h4 class="font-semibold text-gray-900 dark:text-white text-xs">ERIC API Credentials</h4>
                     </div>
 
                     <div class="p-3 flex flex-col gap-2.5">
 
-                        <div>
-                            <textarea id="json-input" rows="11" spellcheck="false"
-                                class="resize-none w-full bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-md px-2.5 py-2 text-xs font-mono text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                                placeholder=''></textarea>
+                        <!-- Inputs Wrapper -->
+                        <div class="flex flex-col gap-2.5">
 
-                            <p id="json-feedback"
-                                class="text-[10px] text-gray-400 mt-1.5 dark:text-gray-500 flex items-center gap-1 transition-colors">
-                                Enter a valid JSON object.
-                            </p>
+                            <!-- Login Name -->
+                            <div>
+                                <label for="input-login-name"
+                                    class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 block">
+                                    Login Name
+                                </label>
+                                <input type="text" id="input-login-name" placeholder="xxxxx" autocomplete="off"
+                                    class="w-full bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-md px-2.5 py-2 text-xs font-mono text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+
+                            <!-- Password -->
+                            <div>
+                                <label for="input-password"
+                                    class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 block">
+                                    Password
+                                </label>
+                                <input type="text" id="input-password" placeholder="xxxxx-xxxxx-xxxxx"
+                                    autocomplete="new-password"
+                                    class="w-full bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-md px-2.5 py-2 text-xs font-mono text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+
+                            <!-- Client ID -->
+                            <div>
+                                <label for="input-client-id"
+                                    class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 block">
+                                    Client ID
+                                </label>
+                                <input type="text" id="input-client-id" placeholder="xxxxx-xxxxx-xxxxx"
+                                    autocomplete="off"
+                                    class="w-full bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-md px-2.5 py-2 text-xs font-mono text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+
+                            <!-- Client Secret -->
+                            <div>
+                                <label for="input-client-secret"
+                                    class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1 block">
+                                    Client Secret
+                                </label>
+                                <input type="txt" id="input-client-secret" placeholder="xxxxx-xxxxx-xxxxx"
+                                    autocomplete="new-password"
+                                    class="w-full bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-md px-2.5 py-2 text-xs font-mono text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+
                         </div>
 
+                        <!-- Feedback Message -->
+                        <p id="json-feedback"
+                            class="text-[10px] text-gray-400 mt-1.5 dark:text-gray-500 flex items-center gap-1 transition-colors">
+                            Enter valid credentials.
+                        </p>
+
+                        <!-- Save Button -->
                         <button id="btn-save-json"
-                            class="flex-[2] flex items-center justify-center gap-1 px-2.5 py-1.5 bg-primary hover:bg-primary/90 text-white rounded text-xs font-medium transition-all shadow-sm active:scale-[0.98] outline-none cursor-pointer">
+                            class="flex-[2] flex items-center justify-center gap-1 px-2.5 py-1.5 bg-primary hover:bg-primary/90 text-white rounded text-sm font-medium transition-all shadow-sm active:scale-[0.98] outline-none cursor-pointer">
                             <span class="material-symbols-outlined">save</span> Validate and Save
                         </button>
-
 
                     </div>
                 </div>
 
             </div>
         </div>
-    </main>   
+    </main>
 </body>
 
 
